@@ -4,7 +4,7 @@
     <command value="start" />
     <envs />
     <method v="2">
-      <option name="Gradle.BeforeRunTask" enabled="true" tasks="jsBrowserDevelopmentLibraryDistribution" externalProjectPath="$PROJECT_DIR$/shared" vmOptions="" scriptParameters="" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="jsBrowserDevelopmentLibraryDistribution" externalProjectPath="$PROJECT_DIR$/sharedLogic" vmOptions="" scriptParameters="" />
       <option name="NpmBeforeRunTask" enabled="true">
         <package-json value="$PROJECT_DIR$/webApp/package.json" />
         <command value="install" />
