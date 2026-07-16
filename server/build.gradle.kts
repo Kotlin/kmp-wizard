@@ -10,7 +10,7 @@ application {
 }
 
 dependencies {
-    api(projects.core)
+    api(project(":core"))
     implementation(libs.logback)
     implementation(libs.ktor.serverCore)
     implementation(libs.ktor.serverNetty)

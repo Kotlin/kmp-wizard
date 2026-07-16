@@ -21,7 +21,7 @@ kotlin {
         browser()
     }
     
-    androidLibrary {
+    android {
        namespace = "org.example.project.core"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
