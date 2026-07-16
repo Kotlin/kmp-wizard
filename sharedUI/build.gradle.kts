@@ -10,7 +10,7 @@ plugins {
 kotlin {
     jvm()
     
-    androidLibrary {
+    android {
        namespace = "org.example.project.sharedUI"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
@@ -24,14 +24,20 @@ kotlin {
        withHostTest {
            isIncludeAndroidResources = true
        }
+       withDeviceTestBuilder {
+           sourceSetTreeName = "test"
+       }.configure {
+           instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+       }
     }
     
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
+            implementation(libs.compose.uiTooling)
         }
         commonMain.dependencies {
-            api(projects.sharedLogic)
+            api(project(":sharedLogic"))
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
