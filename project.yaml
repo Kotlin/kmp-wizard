@@ -1,0 +1,8 @@
+modules:
+  - app/androidApp
+  - app/desktopApp
+  - app/iosApp
+  - app/shared
+  - app/webApp
+  - core
+  - server
