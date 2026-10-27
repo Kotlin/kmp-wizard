@@ -15,12 +15,10 @@ kotlin {
             isStatic = true
         }
     }
-    
     android {
        namespace = "org.example.project.sharedLogic"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -31,7 +29,6 @@ kotlin {
            isIncludeAndroidResources = true
        }
     }
-    
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here

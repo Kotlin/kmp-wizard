@@ -8,12 +8,10 @@ plugins {
 }
 
 kotlin {
-    
     android {
        namespace = "org.example.project.sharedUI"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -29,7 +27,6 @@ kotlin {
            instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
        }
     }
-    
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
@@ -48,6 +45,9 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        getByName("androidDeviceTest").dependencies {
+            implementation(libs.androidx.testRunner)
         }
     }
 }
