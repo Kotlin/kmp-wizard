@@ -9,23 +9,18 @@ plugins {
 kotlin {
     iosArm64()
     iosSimulatorArm64()
-    
     jvm()
-    
     js {
         browser()
     }
-    
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
     }
-    
     android {
        namespace = "org.example.project.core"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -36,7 +31,6 @@ kotlin {
            isIncludeAndroidResources = true
        }
     }
-    
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here

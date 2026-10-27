@@ -18,25 +18,20 @@ kotlin {
             isStatic = true
         }
     }
-    
     jvm()
-    
     js {
         browser()
         binaries.executable()
     }
-    
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
         binaries.executable()
     }
-    
     android {
        namespace = "org.example.project.app.shared"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -52,7 +47,6 @@ kotlin {
            instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
        }
     }
-    
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
@@ -74,6 +68,9 @@ kotlin {
         }
         jsMain.dependencies {
             implementation(libs.wrappers.browser)
+        }
+        getByName("androidDeviceTest").dependencies {
+            implementation(libs.androidx.testRunner)
         }
     }
 }
